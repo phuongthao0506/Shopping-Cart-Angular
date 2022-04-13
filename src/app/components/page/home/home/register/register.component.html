@@ -1,0 +1,138 @@
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start " style="
+padding:4% 30%; background-image: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))">
+  <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0.5rem;
+      }
+    }
+  </style>
+  <div class="card mb-3" style="background-color: #E9E9E9">
+    <div class="row g-0 d-flex align-items-center">
+
+      <div class="col-lg-12 py-5">
+        <div class="card-body  ">
+          <div class="col-8"> <a href="/" class="navbar-brand" style="padding:0px;"><img
+                src="../../../assets/img/logo-shop-dien-thoai-7.jpeg" class="w-100"
+                style="margin-left: 24%;margin-bottom:20px"></a>
+          </div>
+          <h2 class="text-center" style="margin-bottom:40px">ĐĂNG KÝ </h2>
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <!-- name input -->
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example1"> Họ và Tên</label>
+              <input id="form2Example1" class="form-control" formControlName="fullName" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(userForm.get('fullName').dirty || submit) && userForm.get('fullName').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập họ tên !</strong>
+              </div>
+
+            </div>
+
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example1">Tên tài khoản </label>
+              <input id="form2Example1" class="form-control" formControlName="userName" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(userForm.get('userName').dirty || submit) && userForm.get('userName').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập tên tài khoản !</strong>
+              </div>
+
+
+              <div *ngIf="(userForm.get('userName').dirty || submit)&& userForm.get('userName').errors?.maxlength">
+                <strong style="color:red">Tên tài khoản không quá 10 kí tự !</strong>
+              </div>
+
+            </div>
+            <!-- Phone input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example1"> Số điện thoại</label>
+              <input id="form2Example1" class="form-control" formControlName="phone" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(userForm.get('phone').dirty || submit) && userForm.get('phone').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập số điện thoại !</strong>
+              </div>
+              <div *ngIf="(userForm.get('phone').dirty || submit)&& userForm.get('phone').errors?.maxlength">
+                <strong style="color:red">Số điện thoại không quá 10 chữ số !</strong>
+              </div>
+              <div *ngIf="(userForm.get('phone').dirty || submit)&& userForm.get('phone').errors?.minlength">
+                <strong style="color:red">Số điện thoại từ 8 chữ số !</strong>
+              </div>
+
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">Mật khẩu</label>
+              <input type="password" id="form2Example2" class="form-control" formControlName="password" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(userForm.get('password').dirty || submit) && userForm.get('password').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập Mật khẩu !</strong>
+              </div>
+              <div *ngIf="(userForm.get('password').dirty || submit)&& userForm.get('password').errors?.minlength">
+                <strong style="color:red"> password từ 8 chữ số !</strong>
+              </div>
+
+
+            </div>
+
+
+
+            <!-- mail input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">Email</label>
+              <input id="form2Example2" class="form-control" formControlName="mail" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(userForm.get('mail').dirty || submit) && userForm.get('mail').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập Email !</strong>
+              </div>
+              <div *ngIf="(userForm.get('mail').dirty || submit)&& userForm.get('mail').errors?.email">
+                <strong style="color:red">Email không đúng định dạng !</strong>
+              </div>
+            </div>
+            <!-- dia chi  input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">Địa chỉ</label>
+              <input id="form2Example2" class="form-control" formControlName="address" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(userForm.get('address').dirty || submit) && userForm.get('address').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập địa chỉ !</strong>
+              </div>
+            </div>
+
+
+            <!-- Submit button -->
+            <div class="row">
+            <button type="button" class="btn btn-primary btn-block mb-4 col-4" (click)="onSubmit()">Đăng ký </button>
+            <a class="nav-link col-4" style=" font-size: 15px;color: #F37A14;" [routerLink]="['/login']"
+                        routerLinkActive="active">
+                       
+                        Đăng nhập
+                    </a>
+          </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

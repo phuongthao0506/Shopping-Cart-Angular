@@ -1,0 +1,167 @@
+<!-- ------ HEADER ----  -->
+<div class="" style="
+       padding: 0px;">
+    <nav class="navbar navbar-expand-md  " style="background-color: #E9E9E9;padding: 0px;">
+        <div class="container-fluid row">
+            <div class="col-3"> <a href="/" class="navbar-brand" style="padding:0px"><img
+                        src="../../../assets/img/logo-shop-dien-thoai-7.jpeg" class="w-75"></a>
+            </div>
+            <div class="col-5">
+                <form action="">
+                    <div class="row">
+                        <div class="col-10">
+                            <input [(ngModel)]="keyword" class="form-control mr-sm-2 " placeholder=" Bạn tìm gì ? "
+                              name="key" style="width: 100%;border: 1px solid #4dd0e1;box-shadow: 0 0 0 1px #4dd0e1">
+                        </div>
+                        <div class="col-2">
+
+                            <button class="btn btn-outline-info my-2 my-sm-0  " id="btnSearch" type="submit"
+                                (click)="search()">Search</button>
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div *ngIf="isLogin" class="col-2" style="padding: 0px;color: #F37A14;">
+                <p class="mb-0 title text-center" style="color: #F37A14; font-size: 20px;">
+
+                    <a class="nav-link" style="color: #F37A14; font-size: 20px;" [routerLink]="['/profile']"
+                        routerLinkActive="active">
+                        <img src="https://picsum.photos/50/50" style="border-radius: 50%; margin-right:5spx">
+                        Thao111111
+                    </a>
+                </p>
+            </div>
+            <div *ngIf="isLogin" class="col-2" style="padding: 0px;color: #F37A14;">
+                <p class="mb-0 title text-center" style="color: #F37A14; font-size: 20px;">
+
+                    <a class="nav-link" style="color: #F37A14; font-size: 20px;" [routerLink]="['/home']"
+                        routerLinkActive="active" (click)="logout()">
+                        <i class="fa fa-paper-plane" style="color: #F37A14; font-size: 25px;"></i> Đăng xuất
+                    </a>
+                </p>
+            </div>
+            <div *ngIf="!isLogin" class="col-2" style="padding: 0px;color: #F37A14;">
+                <p class="mb-0 title text-center" style="color: #F37A14; font-size: 20px;">
+                    <a class="nav-link" style=" font-size: 20px;color: #F37A14;" [routerLink]="['/login']"
+                        routerLinkActive="active">
+                        <i class="fa fa-chevron-right" style="color: #F37A14; font-size: 20px;"></i>
+                        Đăng nhập
+                    </a>
+                </p>
+            </div>
+            <div *ngIf="!isLogin" class="col-2" style="padding: 0px;color: #F37A14;">
+                <p class="mb-0 title" style="color: #F37A14; font-size: 20px;">
+                    <a class="nav-link" style=" font-size: 20px;color: #F37A14;" [routerLink]="['/register']"
+                        routerLinkActive="active">
+                        <i class="fa fa-user-plus" style="color: #F37A14; font-size: 30px;"></i>
+                        Đăng Kí
+                    </a>
+                </p>
+            </div>
+
+
+        </div>
+    </nav>
+</div>
+<app-navbar></app-navbar>
+<div class="filter m-3">
+  
+    <div class="text-center" style="
+padding-bottom:1%; ">
+        <button  class="btn btn-outline-dark" (click)="filterName('iphone')"
+            style="border:1px solid gray; border-radius:20px;padding: 0.5% 4%; margin-right: 10px ">
+            <h4 class="m-0">Apple</h4>
+        </button>
+        <button  class="btn btn-outline-info" (click)="filterName('ViVo')"
+            style="border:1px solid gray; border-radius:20px;padding: 0.5% 4%; margin-right: 10px">
+            <h4 class="m-0">Vivo</h4>
+        </button>
+        <button  class="btn btn-outline-success" (click)="filterName('VinSmart')"
+            style="border:1px solid gray; border-radius:20px;padding: 0.5% 4%; margin-right: 10px">
+            <h4 class="m-0">VinSmart</h4>
+        </button>
+        <button  class="btn btn-outline-primary" (click)="filterName('Meizu')"
+            style="border:1px solid gray; border-radius:20px;padding: 0.5% 4%; margin-right: 10px">
+            <h4 class="m-0">Meizu</h4>
+        </button>
+
+    </div>
+</div>
+<div class="allPr " style="padding: 0 5%;">
+
+
+
+    <nav class="navbar">
+        <div class="form-inline row " style="margin-left: 65%;">
+            <div class="col-5"> <a (click)="allProduct()" class="text-light btn btn-warning"> Tất cả sản phẩm </a></div>
+
+
+            <div class="col-7">
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="value" (ngModelChange)="change()">
+                    <option value="">Sắp xếp theo giá</option>
+                    <option value="giaBan,asc" >Giá thấp đến cao </option>
+                    <option value="giaBan,desc">Giá cao đến thấp</option>
+                    <option value="rom,asc">Dung lượng thấp đến cao </option>
+                    <option value="rom,desc">Dung lượng cao đến thấp</option>
+                    <option value="giamGia,desc">Sale nhiều nhất </option>
+
+                </select>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+   
+    <div class="row " id="best-smartphone-container">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-lg-3 p-2 mb-3" *ngFor="let product of products  | filter:key|sortBy:typeSort:keySort">
+            <div class="container" style="padding: 0px;">
+                <div class="card  p-1 " style="box-shadow: 0px -1px 19px 1px #a3a7abcc;">
+
+                    <img class="card-img-top mt-2" alt="Card image" style="width:  100%; height: 250px"
+                        src="{{product.hinhAnh}}" />
+                    <div class="card-body " style="
+            padding: 14px">
+                        <h4 class="card-title text-center">{{product.tenSP}}</h4>
+                        <h6 class="text-danger"> Giảm giá: {{product.giamGia }} % </h6>
+                        <h6 class="text-info"> Dung lượng : {{product.rom }}  </h6>
+                        <h6> Giá sale: {{product.giaBan | number}} VND </h6>
+                        <h6 style="text-decoration: line-through; color: gray">{{product.giaBan*100/(100-product.giamGia) | number }}
+                            VND</h6>
+
+                        <p> <i>Thương hiệu: <span class="text-primary">{{product.thuongHieu}}</span></i> </p>
+                        <i> Mã sản phẩm: {{product.maSP}} </i>
+                        <div>
+                            <i class="fa fa-star " style="color: #FFE51E"></i>
+                            <i class="fa fa-star " style="color: #FFE51E"></i>
+                            <i class="fa fa-star " style="color: #FFE51E"></i>
+                            <i class="fa fa-star " style="color: #FFE51E"></i>
+                            <i class="fa fa-star "></i>
+                        </div>
+                        <div>
+                            <a class="btn btn-warning mt-2 btn-detail" style="font-size: 15px;margin-right: 12px;"
+                                [routerLink]="['/product',product.maSP]" routerLinkActive="active">Chi tiết </a>
+                            <a class="btn btn-success mt-2 btn-buy " style="font-size: 15px"
+                                [routerLink]="['/checkout',product.maSP]" routerLinkActive="active">
+                                <i class="fa fa-shopping-cart"></i>
+                                Mua ngay
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

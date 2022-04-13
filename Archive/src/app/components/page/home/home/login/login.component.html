@@ -1,0 +1,86 @@
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start " style="
+padding:4% 15%; background-image: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))">
+  <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0.5rem;
+      }
+    }
+  </style>
+  <div class="card mb-3" style="background-color: #E9E9E9">
+    <div class="row g-0 d-flex align-items-center">
+      <div class="col-lg-6 d-none d-lg-flex">
+        <a href="/" class="navbar-brand" style="padding:0px">
+          <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
+            class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+
+        </a>
+      </div>
+      <div class="col-lg-6 py-5">
+        <div class="card-body  ">
+          <div class="col-8"> <a href="/" class="navbar-brand" style="padding:0px"><img
+                src="../../../assets/img/logo-shop-dien-thoai-7.jpeg" class="w-100" style="margin-left: 24%;"></a>
+          </div>
+          <h1 class="text-center" style="margin-bottom:50px">ĐĂNG NHẬP </h1>
+          <form [formGroup]="loginForm">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example1"> Số điện thoại</label>
+              <input id="form2Example1" class="form-control" formControlName="phone" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(loginForm.get('phone').dirty ||isSubmit) && loginForm.get('phone').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập số điện thoại !</strong>
+              </div>
+              <div *ngIf="(loginForm.get('phone').dirty ||isSubmit)&& loginForm.get('phone').errors?.maxlength">
+                <strong style="color:red">Số điện thoại không quá 10 chữ số !</strong>
+              </div>
+              <div *ngIf="(loginForm.get('phone').dirty ||isSubmit)&& loginForm.get('phone').errors?.minlength">
+                <strong style="color:red">Số điện thoại từ 8 chữ số !</strong>
+              </div>
+            </div>
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">Mật khẩu</label>
+              <input type="password" class="form-control" formControlName="password" />
+              <!-- Kiểm tra lỗi -->
+              <div *ngIf="(loginForm.get('password').dirty || isSubmit) && loginForm.get('password').errors?.required"
+                class="text-danger ">
+                <strong>Vui lòng nhập Mật khẩu !</strong>
+              </div>
+              <div *ngIf="(loginForm.get('password').dirty || isSubmit)&& loginForm.get('password').errors?.minlength">
+                <strong style="color:red"> Password từ 8 chữ số !</strong>
+              </div>
+            </div>
+
+
+
+
+            <!-- Submit button -->
+            <div class="row">
+            <button type="button" class="btn btn-primary btn-block mb-4 col-4" (click)="onSubmit()">Đăng nhập </button>
+            <a class="nav-link col-4" style=" font-size: 15px;color: #F37A14;" [routerLink]="['/register']"
+                        routerLinkActive="active">
+                       
+                        Đăng kí tài khoản
+                    </a>
+                  </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

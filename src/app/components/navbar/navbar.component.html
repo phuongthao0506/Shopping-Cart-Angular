@@ -1,0 +1,19 @@
+<div class="container-fluid row myNavbar text-center" style="
+padding:0 5%; background-color: #FFC108; margin:0 ">
+    <div class="col-3" >
+        <a appHover [color]="'blue'" [colorOut]="'black'"class="nav-link   h4"  style="color:black" [routerLink]="['/home']" routerLinkActive="active" ><i
+                class="fas fa-home" style="color: black;"></i> &ensp; TRANG CHỦ</a>
+    </div>
+    <div class="col-3">
+      <a appHover [color]="'blue'" [colorOut]="'black'"class="nav-link   h4"  style="color:black" [routerLink]="['/news']" routerLinkActive="active" ><i class="fab fa-slack" style="color: black;"></i>&ensp; TIN CÔNG NGHỆ</a>
+
+    </div>
+    <div class="col-3">
+      <a class="nav-link   h4"  style="color:black"   [routerLink]="['/promotion']" routerLinkActive="active" appHover [color]="'blue'" [colorOut]="'black'" ><i class="fas fa-tags" style="color: black;"></i> &ensp; KHUYẾN MÃI</a>
+
+    </div>
+    <div class="col-3">
+      <a appHover [color]="'blue'" [colorOut]="'black'"class="nav-link   h4"  style="color:black" [routerLink]="['/contact']" routerLinkActive="active" ><i class="fas fa-users" style="color: black;"></i> &ensp;LIÊN HỆ</a>
+
+    </div>
+</div>

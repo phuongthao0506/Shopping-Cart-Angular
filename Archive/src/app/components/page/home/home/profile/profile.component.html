@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div style="    padding: 5% 21%;">
+    <div class="right container"
+        style=" background: #fff;border: .5px solid #d5d5d5;box-sizing: border-box;border-radius: 10px;">
+        <div class="heading">
+            <h2 class="fw-bold" style="padding: 4% 0;">Thông tin cá nhân</h2>
+        </div>
+
+        <div class="infoUser">
+            <div class="row setting-item" style="border-top: 1px solid #dee2e6;    padding: 2% 0;">
+                <div class="col-md-6 col-12 setting-label">
+                    Họ và Tên :
+                </div>
+                
+                <div class="col-md-6 col-12">
+                    <p>{{user.fullName}}</p>
+                </div>
+            </div>
+            <div class="row setting-item" style="border-top: 1px solid #dee2e6;    padding: 2% 0;">
+                <div class="col-md-6 col-12 setting-label">
+                 Tên tài khoản :
+                </div>
+                
+                <div class="col-md-6 col-12">
+                    <p>{{user.userName}}</p>
+                </div>
+            </div>
+            <div class="row setting-item" style="border-top: 1px solid #dee2e6;    padding: 2% 0;">
+                <div class="col-md-6 col-12 setting-label">
+                    Địa chỉ Email
+                </div>
+                <div class="col-md-6 col-12">
+                    <p>{{user.mail}}</p>
+                </div>
+            </div>
+            <div class="row setting-item" style="border-top: 1px solid #dee2e6;    padding: 2% 0;">
+                <div class="col-md-6 col-12 setting-label">
+                    Địa chỉ :
+                </div>
+                <div class="col-md-6 col-12">
+                    <p>{{user.address}}</p>
+                </div>
+            </div>
+            <div class="row setting-item" style="border-top: 1px solid #dee2e6;    padding: 2% 0;">
+                <div class="col-md-6 col-12 setting-label">
+                    Số điện thoại
+                </div>
+                <div class="col-md-6 col-12">
+                    <p>{{user.phone}}</p>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
